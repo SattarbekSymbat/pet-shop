@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # PostgreSQL база данных
+  postgres:
+    image: postgres:15
+    container_name: sattarbek_symbat_postgres
+    environment:
+      POSTGRES_DB: petshop
+      POSTGRES_USER: sattarbek
+      POSTGRES_PASSWORD: sattarbek123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sattarbek"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Приложение Pet Shop
+  app:
+    build: .
+    container_name: sattarbek_symbat_petshop
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/petshop
+      SPRING_DATASOURCE_USERNAME: sattarbek
+      SPRING_DATASOURCE_PASSWORD: sattarbek123
+      JWT_SECRET: SattarbekSymbatSecretKey2025
+      JWT_EXPIRATION: 86400000
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  postgres_data:
