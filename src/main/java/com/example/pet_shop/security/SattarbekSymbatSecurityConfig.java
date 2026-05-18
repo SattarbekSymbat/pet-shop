@@ -22,6 +22,8 @@ public class SattarbekSymbatSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/products/**").permitAll()
+                        // ⬇️⬇️⬇️ ДОБАВЬТЕ ЭТИ СТРОКИ ⬇️⬇️⬇️
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**", "/api-docs/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

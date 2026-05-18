@@ -1,11 +1,11 @@
 package com.example.pet_shop.service;
 
 import com.example.pet_shop.entity.SattarbekSymbatOrder;
-import com.example.pet_shop.entity.SattarbekSymbatUser;
 import com.example.pet_shop.entity.SattarbekSymbatProduct;
+import com.example.pet_shop.entity.SattarbekSymbatUser;
 import com.example.pet_shop.repository.SattarbekSymbatOrderRepository;
-import com.example.pet_shop.repository.SattarbekSymbatUserRepository;
 import com.example.pet_shop.repository.SattarbekSymbatProductRepository;
+import com.example.pet_shop.repository.SattarbekSymbatUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
