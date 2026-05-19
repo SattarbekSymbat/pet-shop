@@ -1,5 +1,6 @@
 package com.example.pet_shop.service;
 
+import com.example.pet_shop.dto.SattarbekSymbatProductResponse;
 import com.example.pet_shop.entity.SattarbekSymbatProduct;
 import com.example.pet_shop.repository.SattarbekSymbatProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -51,5 +52,16 @@ public class SattarbekSymbatProductService {
 
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
+    }
+
+    // ==================== МАППИНГ (ENTITY → DTO) ====================
+    public SattarbekSymbatProductResponse toResponse(SattarbekSymbatProduct product) {
+        SattarbekSymbatProductResponse response = new SattarbekSymbatProductResponse();
+        response.setId(product.getId());
+        response.setName(product.getName());
+        response.setDescription(product.getDescription());
+        response.setPrice(product.getPrice());
+        response.setStock(product.getStock());
+        return response;
     }
 }
