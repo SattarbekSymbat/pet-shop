@@ -19,6 +19,7 @@ public class SattarbekSymbatJwtUtil {
     private Long expiration;
 
 
+
     private Key getSigningKey() {
         byte[] keyBytes = secret.getBytes();
         return Keys.hmacShaKeyFor(keyBytes);
