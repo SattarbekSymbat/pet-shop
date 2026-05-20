@@ -47,4 +47,5 @@ public class SattarbekSymbatAuthController {
         response.put("email", email);
         return response;
     }
+
 }
