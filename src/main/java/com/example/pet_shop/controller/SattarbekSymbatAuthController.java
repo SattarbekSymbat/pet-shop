@@ -15,6 +15,7 @@ public class SattarbekSymbatAuthController {
 
     private final SattarbekSymbatUserService userService;
 
+
     @PostMapping("/register")
     public Map<String, String> register(
             @RequestParam String email,
