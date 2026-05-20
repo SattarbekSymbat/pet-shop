@@ -36,6 +36,7 @@ public class SattarbekSymbatAuthController {
     ) {
         SattarbekSymbatUser user = userService.findByEmail(email).orElse(null);
 
+
         if (user == null || !user.getPassword().equals(password)) {
             Map<String, String> error = new HashMap<>();
             error.put("error", "Invalid credentials");
