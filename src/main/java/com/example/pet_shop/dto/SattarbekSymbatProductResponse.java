@@ -9,4 +9,5 @@ public class SattarbekSymbatProductResponse {
     private String description;
     private Double price;
     private Integer stock;
+
 }
