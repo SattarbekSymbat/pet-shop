@@ -3,6 +3,7 @@ package com.example.pet_shop.service;
 import com.example.pet_shop.dto.SattarbekSymbatProductResponse;
 import com.example.pet_shop.entity.SattarbekSymbatProduct;
 import com.example.pet_shop.repository.SattarbekSymbatProductRepository;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -55,7 +56,7 @@ public class SattarbekSymbatProductService {
     }
 
     // ==================== МАППИНГ (ENTITY → DTO) ====================
-    public SattarbekSymbatProductResponse toResponse(SattarbekSymbatProduct product) {
+    public SattarbekSymbatProductResponse toResponse(@NonNull SattarbekSymbatProduct product) {
         SattarbekSymbatProductResponse response = new SattarbekSymbatProductResponse();
         response.setId(product.getId());
         response.setName(product.getName());

@@ -22,7 +22,6 @@ public class SattarbekSymbatAuthController {
             @RequestParam String name
     ) {
         SattarbekSymbatUser user = userService.createUser(email, password, name);
-
         Map<String, String> response = new HashMap<>();
         response.put("message", "User registered successfully");
         response.put("email", user.getEmail());
