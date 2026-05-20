@@ -18,6 +18,7 @@ public class SattarbekSymbatJwtUtil {
     @Value("${jwt.expiration}")
     private Long expiration;
 
+
     private Key getSigningKey() {
         byte[] keyBytes = secret.getBytes();
         return Keys.hmacShaKeyFor(keyBytes);
