@@ -8,4 +8,5 @@ public class SattarbekSymbatProductRequest {
     private String description;
     private Double price;
     private Integer stock;
+
 }
