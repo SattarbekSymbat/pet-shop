@@ -12,6 +12,7 @@ public class SattarbekSymbatOrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @ManyToOne
     @JoinColumn(name = "order_id")
     private SattarbekSymbatOrder order;
