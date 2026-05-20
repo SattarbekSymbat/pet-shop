@@ -15,6 +15,7 @@ import java.util.List;
 @Data
 public class SattarbekSymbatUser implements UserDetails {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
