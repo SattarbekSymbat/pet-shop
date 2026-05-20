@@ -12,6 +12,7 @@ import java.util.Date;
 @Component
 public class SattarbekSymbatJwtUtil {
 
+
     @Value("${jwt.secret}")
     private String secret;
 
