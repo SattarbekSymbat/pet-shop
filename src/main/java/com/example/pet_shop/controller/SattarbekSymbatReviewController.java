@@ -36,6 +36,8 @@ public class SattarbekSymbatReviewController {
 
     @DeleteMapping("/{id}")
     public void deleteReview(@PathVariable Long id) {
+
         reviewService.deleteReview(id);
     }
+
 }
