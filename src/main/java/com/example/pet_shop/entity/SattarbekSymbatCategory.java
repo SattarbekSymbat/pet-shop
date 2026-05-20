@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 public class SattarbekSymbatCategory {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
